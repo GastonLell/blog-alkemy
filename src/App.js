@@ -1,11 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Router from './router';
 
 function App() {
   return (
-    <div className="App">
-      post app
-    </div>
+    <>
+      <Router/>
+    </>
   );
 }
 

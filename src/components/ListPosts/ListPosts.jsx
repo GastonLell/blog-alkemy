@@ -26,7 +26,13 @@ const ListPosts = () => {
 
     return(
         <Row className="m-0 d-flex justify-content-between">
-            aca irian los post
+            {
+                arrPost.map(item => {
+                    return(
+                        <Post key={item.id} title={item.title} id={item.id} />
+                    )
+                })
+            }
         </Row>
     )
 }

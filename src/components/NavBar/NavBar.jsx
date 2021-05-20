@@ -32,7 +32,7 @@ const NavBar = () => {
         </Navbar.Brand>
       </Col>
       
-      <Col className="d-flex justify-content-end" >
+      <Col className="d-flex justify-content-end">
         <Button variant="outline-info" onClick={handleSignOut}><FaSignOutAlt/></Button>
       </Col>
 

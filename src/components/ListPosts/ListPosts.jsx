@@ -1,38 +1,28 @@
-import {Row} from 'react-bootstrap';
+//HOOKS
+import { useContext } from 'react';
+//CONTEXT GLOBAL
+import { StorePosts } from '../../store/PostStore';
+//COMPONENTS REACT-BOOTSTRAP
+import { Row } from 'react-bootstrap';
+//COMPONENTS
 import Post from '../Post/Post';
-const arrPost = [
-    {
-        id: 1,
-        title: "post uno"
-    },
-    {
-        id: 2,
-        title: "post dos"
-    },
-    {
-        id: 3,
-        title: "post tres"
-    },
-    {
-        id: 4,
-        title: "post cuatro"
-    },
-    {
-        id: 5,
-        title: "post cinco"
-    }
-]
+
+
 const ListPosts = () => {
 
-    return(
+    const [allPosts] = useContext(StorePosts);
+
+    return (
         <Row className="m-0 d-flex justify-content-between">
             {
-                arrPost.map(item => {
-                    return(
+
+                allPosts?.map(item => {
+                    return (
                         <Post key={item.id} title={item.title} id={item.id} />
                     )
                 })
             }
+
         </Row>
     )
 }

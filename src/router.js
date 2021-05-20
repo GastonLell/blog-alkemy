@@ -7,14 +7,20 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Home from "./pages/Home";
 import EditPost from "./pages/EditPost";
 import Login from "./pages/Login";
+import PostStore from "./store/PostStore";
+
 const Router = () => {
     return(
         <BrowserRouter>
             <NavBar/>
             <Switch>
-                <PrivateRoute exact path="/" component={Home} />
-                <PrivateRoute exact path="/post/edit/:postId" component={EditPost} />
                 <Route exact path="/login" component={Login} />
+                <PostStore>
+                    <PrivateRoute exact path="/" component={Home} />
+                    <PrivateRoute exact path="/post/edit/:postId" component={EditPost} />
+                </PostStore>
+
+               
             </Switch>
         </BrowserRouter>
     )

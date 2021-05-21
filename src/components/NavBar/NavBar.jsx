@@ -1,12 +1,12 @@
 //REACT ROUTER
 import { Link, useHistory } from "react-router-dom";
-import {useEffect, useState} from 'react';
+
 //COMPONENTER BOOTSTRAP
-import { Navbar, Button, Col } from "react-bootstrap";
+import { Navbar, Nav, Button, Col } from "react-bootstrap";
 
 //REACT ICONS
 import { FaSignOutAlt } from "react-icons/fa";
-
+import {   BsFillPlusSquareFill } from "react-icons/bs";
 
 const NavBar = () => {
 
@@ -21,19 +21,31 @@ const NavBar = () => {
   }
 
   return (
-    <Navbar bg="primary" variant="dark" className="px-4 py-3">
+    <Navbar sticky="top" bg="primary" variant="dark" className="px-4 py-3">
 
-      <Col className="px-0 text-left">
+      <Col className="px-0 text-left d-flex">
         <Navbar.Brand>
           <Link 
-            style={{"text-decoration": "none", "color": "#fff"}}
+            style={{"textDecoration": "none", "color": "#fff", "fontSize": "30px"}}
             to='/'
           >AlkePosts</Link>
         </Navbar.Brand>
+
       </Col>
       
       <Col className="d-flex justify-content-end">
-        <Button variant="primary" onClick={handleSignOut}><FaSignOutAlt/></Button>
+        <Nav className="align-self-center mx-2">
+          <Link
+            style={{"textDecoration": "none", "color": "#fff", "fontSize": "20px"}}
+            to='/newPost'
+          >
+            <BsFillPlusSquareFill/>
+          </Link>
+        </Nav>
+
+        <Button 
+          style={{"fontSize": "20px"}}
+        variant="primary" onClick={handleSignOut}><FaSignOutAlt/></Button>
       </Col>
 
     </Navbar>

@@ -10,6 +10,7 @@ import Detail from "./pages/Detail";
 import EditPost from "./pages/EditPost";
 import Login from "./pages/Login";
 import PostStore from "./store/PostStore";
+import CreatePost from './pages/CreatePost';
 
 const Router = () => {
     return(
@@ -20,12 +21,12 @@ const Router = () => {
                 <PostStore>
                     <PrivateRoute exact path="/" component={Home} />
 
+                    <PrivateRoute exact path="/newPost" component={CreatePost} />
+
                     <PrivateRoute exact path="/post/edit/:postId" component={EditPost} />
                     
                     <PrivateRoute exact path="/post/:postId" component={Detail} />
                 </PostStore>
-
-               
             </Switch>
         </BrowserRouter>
     )

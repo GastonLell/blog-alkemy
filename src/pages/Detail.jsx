@@ -1,9 +1,11 @@
-import {Card, Button, Container} from 'react-bootstrap';
-import {Link, useParams} from 'react-router-dom'
+//HOOKS
 import { useState, useEffect} from 'react';
-
+//REACT ROUTER
+import {Link, useParams} from 'react-router-dom'
+//SERVICES
 import postService from '../service/postService';
-
+//COMPONENTS REACT-BOOTSTRAP
+import {Card, Button, Container} from 'react-bootstrap';
 
 const Detail = () => {
 
